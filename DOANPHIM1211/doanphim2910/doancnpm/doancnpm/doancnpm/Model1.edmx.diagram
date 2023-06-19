@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="723166b0d8304525bc47a92f090769ee" Name="Diagram1">
+        <EntityTypeShape EntityType="PhimModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_chinhanh" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_DiemTichLuy" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_hoadon" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_khachhang" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_lichchieu" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_lichlamviec" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_movie" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_ngay" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_nhanvien" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhimModel.tbl_ticket" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <AssociationConnector Association="PhimModel.FK_tbl_lichchieu_tbl_chinhanh" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_nhanvien_tbl_chinhanh" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_DiemTichLuy_tbl_khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_hoadon_tbl_khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_hoadon_tbl_lichchieu" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_hoadon_tbl_movie" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_lichchieu_tbl_movie" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_lichchieu_tbl_ngay" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_ticket_tbl_lichchieu" ManuallyRouted="false" />
+        <AssociationConnector Association="PhimModel.FK_tbl_lichlamviec_tbl_nhanvien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

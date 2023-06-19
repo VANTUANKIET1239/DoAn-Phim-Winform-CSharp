@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhimCTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_chinhanh">
+    <Key>
+      <PropertyRef Name="id_chinhanh" />
+    </Key>
+    <Property Name="id_chinhanh" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tenchinhanh" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_DiemTichLuy">
+    <Key>
+      <PropertyRef Name="id_khachhang" />
+      <PropertyRef Name="id_hoadon" />
+    </Key>
+    <Property Name="id_khachhang" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_hoadon" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="ngayhd" Type="date" Nullable="false" />
+    <Property Name="diemtichluynhan" Type="int" Nullable="false" />
+    <Property Name="diemtichluySD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_hoadon">
+    <Key>
+      <PropertyRef Name="id_hoadonmuave" />
+    </Key>
+    <Property Name="id_hoadonmuave" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_phim" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_lichchieu" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="ngay_hd" Type="date" Nullable="false" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="bap" Type="int" Nullable="false" />
+    <Property Name="nuoc" Type="int" Nullable="false" />
+    <Property Name="tongtien" Type="int" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+    <Property Name="id_khachhang" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_chinhanh" Type="nchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_khachhang">
+    <Key>
+      <PropertyRef Name="id_khachhang" />
+    </Key>
+    <Property Name="id_khachhang" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="hoten" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dienthoai" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="diemtichluy" Type="int" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_lichchieu">
+    <Key>
+      <PropertyRef Name="id_lichchieu" />
+    </Key>
+    <Property Name="id_lichchieu" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="ngay" Type="date" Nullable="false" />
+    <Property Name="giochieu" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_phim" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="rap" Type="int" Nullable="false" />
+    <Property Name="id_chinhanh" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_lichlamviec">
+    <Key>
+      <PropertyRef Name="id_nhanvien" />
+      <PropertyRef Name="ngaybd" />
+    </Key>
+    <Property Name="id_nhanvien" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="ngaybd" Type="date" Nullable="false" />
+    <Property Name="MonMOR" Type="bit" />
+    <Property Name="TueMOR" Type="bit" />
+    <Property Name="WedMOR" Type="bit" />
+    <Property Name="ThuMOR" Type="bit" />
+    <Property Name="FriMOR" Type="bit" />
+    <Property Name="SatMOR" Type="bit" />
+    <Property Name="SunMOR" Type="bit" />
+    <Property Name="MonEVE" Type="bit" />
+    <Property Name="TueEVE" Type="bit" />
+    <Property Name="WedEVE" Type="bit" />
+    <Property Name="ThuEVE" Type="bit" />
+    <Property Name="FriEVE" Type="bit" />
+    <Property Name="SatEVE" Type="bit" />
+    <Property Name="SunEVE" Type="bit" />
+    <Property Name="trangthai" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_movie">
+    <Key>
+      <PropertyRef Name="id_phim" />
+    </Key>
+    <Property Name="id_phim" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tenphim" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phanloai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="daodien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dienvien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="theloai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="khoichieu" Type="date" Nullable="false" />
+    <Property Name="thoiluong" Type="int" Nullable="false" />
+    <Property Name="tinhtrangphim" Type="bit" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+    <Property Name="hinhanh" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_nhanvien">
+    <Key>
+      <PropertyRef Name="id_nhanvien" />
+    </Key>
+    <Property Name="id_nhanvien" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tennhanvien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="matkhau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sdt" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="id_chinhanh" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+    <Property Name="chucvu" Type="nchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ticket">
+    <Key>
+      <PropertyRef Name="id_ve" />
+    </Key>
+    <Property Name="id_ve" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_lichchieu" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="ghe" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="giave" Type="int" Nullable="false" />
+    <Property Name="trangthai" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_DiemTichLuy_tbl_hoadon">
+    <End Role="tbl_hoadon" Type="Self.tbl_hoadon" Multiplicity="1" />
+    <End Role="tbl_DiemTichLuy" Type="Self.tbl_DiemTichLuy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_hoadon">
+        <PropertyRef Name="id_hoadonmuave" />
+      </Principal>
+      <Dependent Role="tbl_DiemTichLuy">
+        <PropertyRef Name="id_hoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_DiemTichLuy_tbl_khachhang">
+    <End Role="tbl_khachhang" Type="Self.tbl_khachhang" Multiplicity="1" />
+    <End Role="tbl_DiemTichLuy" Type="Self.tbl_DiemTichLuy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_khachhang">
+        <PropertyRef Name="id_khachhang" />
+      </Principal>
+      <Dependent Role="tbl_DiemTichLuy">
+        <PropertyRef Name="id_khachhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_hoadon_tbl_khachhang">
+    <End Role="tbl_khachhang" Type="Self.tbl_khachhang" Multiplicity="1" />
+    <End Role="tbl_hoadon" Type="Self.tbl_hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_khachhang">
+        <PropertyRef Name="id_khachhang" />
+      </Principal>
+      <Dependent Role="tbl_hoadon">
+        <PropertyRef Name="id_khachhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_hoadon_tbl_lichchieu">
+    <End Role="tbl_lichchieu" Type="Self.tbl_lichchieu" Multiplicity="1" />
+    <End Role="tbl_hoadon" Type="Self.tbl_hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_lichchieu">
+        <PropertyRef Name="id_lichchieu" />
+      </Principal>
+      <Dependent Role="tbl_hoadon">
+        <PropertyRef Name="id_lichchieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_hoadon_tbl_movie">
+    <End Role="tbl_movie" Type="Self.tbl_movie" Multiplicity="1" />
+    <End Role="tbl_hoadon" Type="Self.tbl_hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_movie">
+        <PropertyRef Name="id_phim" />
+      </Principal>
+      <Dependent Role="tbl_hoadon">
+        <PropertyRef Name="id_phim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_lichchieu_tbl_chinhanh">
+    <End Role="tbl_chinhanh" Type="Self.tbl_chinhanh" Multiplicity="1" />
+    <End Role="tbl_lichchieu" Type="Self.tbl_lichchieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chinhanh">
+        <PropertyRef Name="id_chinhanh" />
+      </Principal>
+      <Dependent Role="tbl_lichchieu">
+        <PropertyRef Name="id_chinhanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_lichchieu_tbl_movie">
+    <End Role="tbl_movie" Type="Self.tbl_movie" Multiplicity="1" />
+    <End Role="tbl_lichchieu" Type="Self.tbl_lichchieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_movie">
+        <PropertyRef Name="id_phim" />
+      </Principal>
+      <Dependent Role="tbl_lichchieu">
+        <PropertyRef Name="id_phim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_lichlamviec_tbl_nhanvien">
+    <End Role="tbl_nhanvien" Type="Self.tbl_nhanvien" Multiplicity="1" />
+    <End Role="tbl_lichlamviec" Type="Self.tbl_lichlamviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_nhanvien">
+        <PropertyRef Name="id_nhanvien" />
+      </Principal>
+      <Dependent Role="tbl_lichlamviec">
+        <PropertyRef Name="id_nhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_nhanvien_tbl_chinhanh">
+    <End Role="tbl_chinhanh" Type="Self.tbl_chinhanh" Multiplicity="1" />
+    <End Role="tbl_nhanvien" Type="Self.tbl_nhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chinhanh">
+        <PropertyRef Name="id_chinhanh" />
+      </Principal>
+      <Dependent Role="tbl_nhanvien">
+        <PropertyRef Name="id_chinhanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ticket_tbl_lichchieu">
+    <End Role="tbl_lichchieu" Type="Self.tbl_lichchieu" Multiplicity="1" />
+    <End Role="tbl_ticket" Type="Self.tbl_ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_lichchieu">
+        <PropertyRef Name="id_lichchieu" />
+      </Principal>
+      <Dependent Role="tbl_ticket">
+        <PropertyRef Name="id_lichchieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhimCTModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_chinhanh" EntityType="Self.tbl_chinhanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_DiemTichLuy" EntityType="Self.tbl_DiemTichLuy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_hoadon" EntityType="Self.tbl_hoadon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_khachhang" EntityType="Self.tbl_khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_lichchieu" EntityType="Self.tbl_lichchieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_lichlamviec" EntityType="Self.tbl_lichlamviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_movie" EntityType="Self.tbl_movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_nhanvien" EntityType="Self.tbl_nhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ticket" EntityType="Self.tbl_ticket" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_DiemTichLuy_tbl_hoadon" Association="Self.FK_tbl_DiemTichLuy_tbl_hoadon">
+      <End Role="tbl_hoadon" EntitySet="tbl_hoadon" />
+      <End Role="tbl_DiemTichLuy" EntitySet="tbl_DiemTichLuy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_DiemTichLuy_tbl_khachhang" Association="Self.FK_tbl_DiemTichLuy_tbl_khachhang">
+      <End Role="tbl_khachhang" EntitySet="tbl_khachhang" />
+      <End Role="tbl_DiemTichLuy" EntitySet="tbl_DiemTichLuy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_hoadon_tbl_khachhang" Association="Self.FK_tbl_hoadon_tbl_khachhang">
+      <End Role="tbl_khachhang" EntitySet="tbl_khachhang" />
+      <End Role="tbl_hoadon" EntitySet="tbl_hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_hoadon_tbl_lichchieu" Association="Self.FK_tbl_hoadon_tbl_lichchieu">
+      <End Role="tbl_lichchieu" EntitySet="tbl_lichchieu" />
+      <End Role="tbl_hoadon" EntitySet="tbl_hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_hoadon_tbl_movie" Association="Self.FK_tbl_hoadon_tbl_movie">
+      <End Role="tbl_movie" EntitySet="tbl_movie" />
+      <End Role="tbl_hoadon" EntitySet="tbl_hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_lichchieu_tbl_chinhanh" Association="Self.FK_tbl_lichchieu_tbl_chinhanh">
+      <End Role="tbl_chinhanh" EntitySet="tbl_chinhanh" />
+      <End Role="tbl_lichchieu" EntitySet="tbl_lichchieu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_lichchieu_tbl_movie" Association="Self.FK_tbl_lichchieu_tbl_movie">
+      <End Role="tbl_movie" EntitySet="tbl_movie" />
+      <End Role="tbl_lichchieu" EntitySet="tbl_lichchieu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_lichlamviec_tbl_nhanvien" Association="Self.FK_tbl_lichlamviec_tbl_nhanvien">
+      <End Role="tbl_nhanvien" EntitySet="tbl_nhanvien" />
+      <End Role="tbl_lichlamviec" EntitySet="tbl_lichlamviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_nhanvien_tbl_chinhanh" Association="Self.FK_tbl_nhanvien_tbl_chinhanh">
+      <End Role="tbl_chinhanh" EntitySet="tbl_chinhanh" />
+      <End Role="tbl_nhanvien" EntitySet="tbl_nhanvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ticket_tbl_lichchieu" Association="Self.FK_tbl_ticket_tbl_lichchieu">
+      <End Role="tbl_lichchieu" EntitySet="tbl_lichchieu" />
+      <End Role="tbl_ticket" EntitySet="tbl_ticket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
